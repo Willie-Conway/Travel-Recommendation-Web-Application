@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav input {
+    padding: 5px;
+    margin: 0 10px;
+}
+
+nav button {
+    padding: 5px 10px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #005f73;
+}
+
+/* Home Page Styles */
+#home {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#home h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+#home p {
+    font-size: 1.2em;
+}
+
+#home img {
+    width: 80%;
+    margin-top: 20px;
+}
+
+/* Social Media Links */
+#social-media {
+    margin-top: 20px;
+}
+
+#social-media a {
+    margin: 0 10px;
+    color: #008CBA;
+    text-decoration: none;
+}
+
+#social-media a:hover {
+    color: #005f73;
+}
+
+/* Results Section */
+#results {
+    margin-top: 30px;
+}
+
+.result-item {
+    margin: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.result-item h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.result-item p {
+    color: #555;
+}
