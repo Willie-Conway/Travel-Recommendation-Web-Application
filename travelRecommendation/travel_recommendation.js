@@ -1,58 +1,82 @@
-// Fetch travel recommendation data from the JSON file
-fetch('travel_recommendation_api.json')
-    .then(response => response.json())
-    .then(data => {
-        // Event listener for the Search button
-        document.getElementById('search-btn').addEventListener('click', function() {
-            const searchTerm = document.getElementById('search-bar').value.toLowerCase();
-            let results = [];
+let searchbtn = document.getElementById("searchbtn");
+let clearbtn = document.getElementById("clearbtn");
+let result = document.getElementById("resultContainer");
+let mydiv = document.getElementById("dropdown");
+let close = document.getElementById("close-btn");
+let query = document.getElementById("searchinput");
 
-            // Filter data based on search term (searching in countries, temples, and beaches)
-            results = [
-                ...filterData(data.countries, searchTerm),
-                ...filterData(data.temples, searchTerm),
-                ...filterData(data.beaches, searchTerm)
-            ];
+const clearsearch = () => {
+  query.value = "";
+  mydiv.style.display = "none";
+  console.log("Clearing");
+};
 
-            // Display the results on the page
-            displayResults(results);
+clearbtn.addEventListener("click", clearsearch);
+
+const showResult = (name, img, info) => {
+  if (mydiv.style.display === "none" || mydiv.style.display === "") {
+    mydiv.style.display = "block";
+  } else {
+    mydiv.style.display = "none";
+  }
+  result.innerHTML = `
+    <h2 class="title">${name}</h2>
+    <img class="search-img" src=${img} alt="sofia">
+    <p class="description">${info}</p>
+  `;
+};
+
+const closeDropdown = () => {
+  mydiv.style.display = "none";
+  query.value = "";
+};
+
+close.addEventListener("click", closeDropdown);
+
+const searchError = () => {
+  if (mydiv.style.display === "none" || mydiv.style.display === "") {
+    mydiv.style.display = "block";
+  } else {
+    mydiv.style.display = "none";
+  }
+
+  result.innerHTML = `<p class="notfound">Sorry we can't find your search</p>`;
+};
+
+fetch("travelrecommendation.json")
+  .then((res) => res.json())
+  .then((data) => {
+    const search = () => {
+      let searchQuery = query.value.toLowerCase();
+      let notfound = true;
+
+      data.countries.map((country) => {
+        country.cities.map((city) => {
+          if (city.name.toLowerCase().includes(searchQuery)) {
+            showResult(city.name, city.imageUrl, city.description);
+            notfound = false;
+          }
         });
+      });
 
-        // Event listener for the Clear button
-        document.getElementById('clear-btn').addEventListener('click', function() {
-            document.getElementById('search-bar').value = ''; // Clear the search input
-            document.getElementById('results').innerHTML = ''; // Clear the displayed results
-        });
-
-        // Function to filter data based on the search term
-        function filterData(items, searchTerm) {
-            return items.filter(item => item.name.toLowerCase().includes(searchTerm));
+      data.temples.map((temple) => {
+        if (temple.name.toLowerCase().includes(searchQuery)) {
+          showResult(temple.name, temple.imageUrl, temple.description);
+          notfound = false;
         }
+      });
 
-        // Function to display results
-        function displayResults(results) {
-            const resultsContainer = document.getElementById('results');
-            resultsContainer.innerHTML = ''; // Clear any previous results
-
-            // If no results found
-            if (results.length === 0) {
-                resultsContainer.innerHTML = '<p>No results found. Try searching for something else.</p>';
-                return;
-            }
-
-            // Loop through the filtered results and display them
-            results.forEach(item => {
-                const resultItem = document.createElement('div');
-                resultItem.classList.add('result-item');
-                resultItem.innerHTML = `
-                    <h3>${item.name}</h3>
-                    <img src="${item.imageUrl}" alt="${item.name}" />
-                    <p>${item.description}</p>
-                `;
-                resultsContainer.appendChild(resultItem);
-            });
+      data.beaches.map((beach) => {
+        if (beach.name.toLowerCase().includes(searchQuery)) {
+          showResult(beach.name, beach.imageUrl, beach.description);
+          notfound = false;
         }
-    })
-    .catch(error => {
-        console.error('Error loading travel recommendation data:', error);
-    });
+      });
+
+      if (notfound) {
+        searchError();
+      }
+    };
+
+    searchbtn.addEventListener("click", search);
+  });
