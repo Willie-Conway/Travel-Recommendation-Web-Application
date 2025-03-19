@@ -2,6 +2,8 @@
 
 Welcome to the **Travel Recommendation Web Application**! ✈️🌎
 
+ ![TravelBloom](https://github.com/Willie-Conway/Travel-Recommendation-Web-Application/blob/243988806893f65c2f19cdbbb27bc61785f1e68a/Images/TravelBloom.png)
+
 This web application helps users explore different travel destinations based on their preferences. Whether you're looking for a **beach**, **temple**, or **country** to visit, this platform will suggest the best places for your next adventure.
 
 ## 🚀 Features
