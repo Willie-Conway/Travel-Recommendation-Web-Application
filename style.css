@@ -340,6 +340,7 @@ form .inputval{
     background-color: #55555595;
     position: absolute;
     width: 30rem;
+    overflow-y: auto;  /* Add vertical scrolling if the content exceeds max height */
     height: auto;
     padding: 1rem 1rem;
     top: 100%;
@@ -348,6 +349,7 @@ form .inputval{
     border-radius: 10px;
     border: 1px solid white;
     display: none;
+    z-index: 10; /* Ensure dropdown appears above other content */
 }
 
 .dropdown-header{
@@ -373,6 +375,7 @@ form .inputval{
 
 #resultContainer{
     width: 100%;
+    color: #fff;
     margin-bottom: 1rem;
     background-color: rgba(5, 104, 107, 0.721);
     border: 1px solid white;
@@ -398,3 +401,25 @@ form .inputval{
 .notfound{
     color: #fff;
 }
+
+.visitbtn {
+    padding: 0.7rem 2rem;
+    margin-top: 20px; /* Add some space between description and button */
+    margin-bottom: 20px;
+    background-color: rgb(7, 89, 92);
+    border: none;
+    outline: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 8px #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .visitbtn:hover {
+    background-color:  rgb(15, 134, 138);
+    box-shadow: 0 0 8px #fbfe28;
+
+  }
