@@ -35,13 +35,12 @@ This web application helps users explore different travel destinations based on 
 
 ## 📂 File Structure
 
-```
-travel_recommendation_app/
+```Travel-Recommendation-Web-Application/
 │
-├── images/                    # Folder for images (e.g., images/sydney.jpg, images/melbourne.jpg)
-├── travel_recommendation.html  # Home page HTML file
-├── about_us.html               # About Us page HTML file
-├── contact_us.html             # Contact Us page HTML file
+├── images/                     # Folder for images (e.g., images/sydney.jpg, images/melbourne.jpg)
+├── index.html                  # Home page HTML file
+├── LICENSE                     # About Us page HTML file
+├── contact_us.html             # License file
 ├── style.css                   # Styles for the website
 ├── travel_recommendation.js    # JavaScript file for dynamic functionalities
 ├── travel_recommendation_api.json # API JSON file with recommendations
@@ -51,7 +50,7 @@ travel_recommendation_app/
 
 ### 1. Clone or Download the Repository
 
-- **Clone**: `git clone https://github.com/your-username/travel-recommendation-app.git`
+- **Clone**: `git clone https://github.com/your-username/Travel-Recommendation-Web-Application.git`
 - **Download**: Click on the green "Code" button and select "Download ZIP".
 
 ### 2. Install a Local Web Server (Optional but Recommended)
@@ -62,7 +61,7 @@ To run the app locally, it's better to use a local server. You can use one of th
 
 1. Open your terminal and navigate to your project folder:
    ```bash
-   cd path/to/travel_recommendation_app
+   cd path/to/Travel-Recommendation-Web-Application
    ```
 2. Start a Python HTTP server:
    - **For Python 3.x**:
@@ -73,14 +72,14 @@ To run the app locally, it's better to use a local server. You can use one of th
      ```bash
      python -m SimpleHTTPServer 8000
      ```
-3. Open your browser and visit `http://localhost:8000/travel_recommendation.html`.
+3. Open your browser and visit `http://localhost:8000/index.html`.
 
 #### **Option 2: Using VS Code with Live Server**
 
 1. Open your project folder in **Visual Studio Code**.
 2. Install the **Live Server** extension from the marketplace.
 3. Right-click `travel_recommendation.html` and select **"Open with Live Server"**.
-4. Your browser should automatically open the page at `http://127.0.0.1:5500/travel_recommendation.html`.
+4. Your browser should automatically open the page at `http://127.0.0.1:5500/index.html`.
 
 ### 3. Enjoy the Application! 🎉
 
