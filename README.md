@@ -78,7 +78,7 @@ To run the app locally, it's better to use a local server. You can use one of th
 
 1. Open your project folder in **Visual Studio Code**.
 2. Install the **Live Server** extension from the marketplace.
-3. Right-click `travel_recommendation.html` and select **"Open with Live Server"**.
+3. Right-click `index.html` and select **"Open with Live Server"**.
 4. Your browser should automatically open the page at `http://127.0.0.1:5500/index.html`.
 
 ### 3. Enjoy the Application! 🎉
